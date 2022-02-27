@@ -19,6 +19,18 @@ from constant import Constant
 
 
 def automated_login(apikey, apisecret, userid, userpassword, otpkey):  # pylint: disable-msg=too-many-locals
+    """Summary
+
+    Args:
+        apikey (TYPE): Description
+        apisecret (TYPE): Description
+        userid (TYPE): Description
+        userpassword (TYPE): Description
+        otpkey (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     logging.info('+++++++++++++AutoMated Login Start++++++++++++++++')
 
     chrome_options = Options()
@@ -63,7 +75,18 @@ def automated_login(apikey, apisecret, userid, userpassword, otpkey):  # pylint:
 
 
 def login_to_zerodha(apikey, apisecret, userid, userpassword, otpkey):
+    """Summary
 
+    Args:
+        apikey (TYPE): Description
+        apisecret (TYPE): Description
+        userid (TYPE): Description
+        userpassword (TYPE): Description
+        otpkey (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     logging.info('-------------apikey-------:%s', apikey)
     logging.info('-------------apisecret-------:%s', apisecret)
     logging.info('-------------userid-------:%s', userid)
@@ -80,6 +103,11 @@ def login_to_zerodha(apikey, apisecret, userid, userpassword, otpkey):
 
 
 def get_access_token():
+    """Summary
+
+    Returns:
+        TYPE: Description
+    """
     token_file = util.get_curr_date_str() + '.json'
     token_file_path = os.path.join(Constant.DEPLOY_DIR, token_file)
     if not os.path.exists(token_file_path):
@@ -93,6 +121,11 @@ def get_access_token():
 
 
 def save_token_to_file(access_token):
+    """Summary
+
+    Args:
+        access_token (TYPE): Description
+    """
     file_name = util.get_curr_date_str() + '.json'
     file_path = os.path.join(Constant.DEPLOY_DIR, file_name)
     logging.info('Saving Access Token to File %s', file_name)
@@ -101,6 +134,11 @@ def save_token_to_file(access_token):
 
 
 def login():
+    """Summary
+
+    Returns:
+        TYPE: Description
+    """
     logging.info('Check If access token is present')
     access_token = get_access_token()
     logging.info('Access token --->  %s ', access_token)

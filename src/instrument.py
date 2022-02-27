@@ -7,10 +7,26 @@ from constant import Constant
 
 
 def fetch_instrument_from_server(kite):
+    """Summary
+
+    Args:
+        kite (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     return kite.instruments('NFO')
 
 
 def cleanup_instrumnet(instruments):
+    """Summary
+
+    Args:
+        instruments (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     monthly_expiry = util.get_monthly_expiry_day_date()
     monthly_expiry = monthly_expiry.date()
     weekly_expiry = util.get_weekly_expiry_day_date()
@@ -23,12 +39,23 @@ def cleanup_instrumnet(instruments):
 
 
 def get_instrument(kite):
+    """Summary
 
+    Args:
+        kite (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     return cleanup_instrumnet(fetch_instrument_from_server(kite))
 
 
 def save_instrument(instruments):
+    """Summary
 
+    Args:
+        instruments (TYPE): Description
+    """
     instruments_filepath = os.path.join(
         Constant.DEPLOY_DIR, 'instruments.json')
     with open(instruments_filepath, 'w', encoding='utf-8') as isd_file:
@@ -38,4 +65,9 @@ def save_instrument(instruments):
 
 
 def get_instrument_all(kite):
+    """Summary
+
+    Args:
+        kite (TYPE): Description
+    """
     save_instrument(get_instrument(kite))

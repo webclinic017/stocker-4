@@ -41,7 +41,7 @@ def prepare_weekly_options_symbol(input_symbol,  # pylint: disable-msg=too-many-
                                   strike,
                                   option_type,
                                   num_weeks_plus=0):
-
+    """<FRESHLY_INSERTED>"""
     expiry_date_time = get_weekly_expiry_day_date()
     today_market_start_time = get_market_start_time()
     expiry_day_market_end_time = get_market_end_time(expiry_date_time)
@@ -94,7 +94,16 @@ def prepare_weekly_options_symbol(input_symbol,  # pylint: disable-msg=too-many-
 
 
 def wait_until(hour, minute, seconds=0):
+    """Summary
 
+    Args:
+        hour (TYPE): Description
+        minute (TYPE): Description
+        seconds (int, optional): Description
+
+    Returns:
+        TYPE: Description
+    """
     today = date.today()
     end_datetime = datetime(today.year, today.month,
                             today.day, hour, minute, seconds)
@@ -111,12 +120,29 @@ def wait_until(hour, minute, seconds=0):
 
 
 def get_market_start_time(date_time_obj=None):
+    """Summary
 
+    Args:
+        date_time_obj (None, optional): Description
+
+    Returns:
+        TYPE: Description
+    """
     return get_time_of_day(9, 15, 0, date_time_obj)
 
 
 def get_time_of_day(hours, minutes, seconds, date_time_obj=None):
+    """Summary
 
+    Args:
+        hours (TYPE): Description
+        minutes (TYPE): Description
+        seconds (TYPE): Description
+        date_time_obj (None, optional): Description
+
+    Returns:
+        TYPE: Description
+    """
     if date_time_obj is None:
         date_time_obj = datetime.now()
     date_time_obj = date_time_obj.replace(
@@ -125,7 +151,14 @@ def get_time_of_day(hours, minutes, seconds, date_time_obj=None):
 
 
 def get_weekly_expiry_day_date(date_time_obj=None):
+    """Summary
 
+    Args:
+        date_time_obj (None, optional): Description
+
+    Returns:
+        TYPE: Description
+    """
     if date_time_obj is None:
         date_time_obj = datetime.now()
     days_to_add = 0
@@ -142,7 +175,12 @@ def get_weekly_expiry_day_date(date_time_obj=None):
 
 
 def publish_status(program_name, status):
+    """Summary
 
+    Args:
+        program_name (TYPE): Description
+        status (TYPE): Description
+    """
     logging.info('Publishing Status to Healthcheck.io')
     if program_name == Constant.PROGRAM_NAME_ALPHA:
         if status:
@@ -154,21 +192,44 @@ def publish_status(program_name, status):
 
 
 def get_curr_date_str():
+    """Summary
 
+    Returns:
+        TYPE: Description
+    """
     return convert_to_date_str(datetime.now())
 
 
 def convert_to_date_str(datetime_obj):
+    """Summary
+
+    Args:
+        datetime_obj (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     return datetime_obj.strftime(DATE_FORMAT)
 
 
 def is_today_holiday():
+    """Summary
 
+    Returns:
+        TYPE: Description
+    """
     return is_holiday(datetime.now())
 
 
 def is_holiday(datetime_obj):
+    """Summary
 
+    Args:
+        datetime_obj (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     date_str = convert_to_date_str(datetime_obj)
     with open(Constant.HOLIDAY_DIR, 'r', encoding='utf-8') as holidays:
         holidays_data = json.load(holidays)
@@ -179,14 +240,28 @@ def is_holiday(datetime_obj):
 
 
 def round_to_nse_price(price):
+    """Summary
 
+    Args:
+        price (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     var_1 = round(price, 2) * 20
     var_2 = math.ceil(var_1)
     return var_2 / 20
 
 
 def get_epoch(datetime_obj=None):
+    """Summary
 
+    Args:
+        datetime_obj (None, optional): Description
+
+    Returns:
+        TYPE: Description
+    """
     if datetime_obj is None:
         datetime_obj = datetime.now()
     epoch_seconds = datetime.timestamp(datetime_obj)
@@ -194,7 +269,14 @@ def get_epoch(datetime_obj=None):
 
 
 def prepare_monthly_expiry_futures_symbol(input_symbol):
+    """Summary
 
+    Args:
+        input_symbol (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
     expiry_date_time = get_monthly_expiry_day_date()
     expiry_date_market_end_time = get_market_end_time(expiry_date_time)
     now = datetime.now()
