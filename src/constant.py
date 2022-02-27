@@ -10,7 +10,8 @@ class Constant:
         CLIENT_ID (str): Zerodha User ID
         CLIENT_PASSWORD (str): Zerodha Password
         DEPLOY_DIR (str): Data Dump Directory
-        HOLIDAY_DIR (str): Holiday List Directory
+        HOLIDA
+        Y_DIR (str): Holiday List Directory
         LOGFILE_DIR (str): Logfile Directory
         TBOT_ID (str): Telegram Bot ID
         TBOT_TOKEN (str): Telegram Bot Token

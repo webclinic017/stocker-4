@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#stocker files
+
+*.log
+data/*
+!data/.gitkeep
