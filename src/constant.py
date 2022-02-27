@@ -19,9 +19,9 @@ class Constant:
     """
 
     # Directories - This needs to be changed when deployed in AWS
-    DEPLOY_DIR = '/home/ubuntu/stockerApp/freedom/data'
-    LOGFILE_DIR = '/home/ubuntu/stockerApp/freedom/logs'
-    HOLIDAY_DIR = '/home/ubuntu/stockerApp/freedom/config/holidays.json'
+    DEPLOY_DIR = '/home/ubuntu/stocker/data'
+    LOGFILE_DIR = '/home/ubuntu/stocker/logs'
+    HOLIDAY_DIR = '/home/ubuntu/stocker/config/holidays.json'
     CHROME_DRIVER_LOCATION = '/usr/bin/chromedriver'
 
     # Zerodha Details
