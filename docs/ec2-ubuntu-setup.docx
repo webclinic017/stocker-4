@@ -1,22 +1,13 @@
 #!/bin/bash
 
-#
-#Author : Chris Boesch
-#Date : 08-26-2009
-#Purpose : Setup an Amazon EC2 instance and download additional scripts from Github to execute.
-#Suggested AMI to develop with: ami-0d729464
-#Comments :
 
-set -e -x
-export DEBIAN_FRONTEND=noninteractive
 
-function die()
-{
-    echo -e "$@" >> /dev/console
-    exit 1
-}
 
-# change the
+
+#change to root user -- all intsallation should happen from root
+
+sudo su
+
 
 
 # adding -y to auto install
@@ -43,7 +34,7 @@ sudo apt -y install google-chrome-stable
 google-chrome --version
 
 #check the google chrome version and then change the version accordingly
-wget https://chromedriver.storage.googleapis.com/94.0.4606.61/chromedriver_linux64.zip
+wget https://chromedriver.storage.googleapis.com/98.0.4758.102/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 
 #move the chromedriver file
@@ -60,8 +51,8 @@ sudo cronitor configure --api-key b637f3a8b03149eb9d4d4b0d42a5d8dc
 
 
 #install git
-git config --global user.name "your_github_username"
-git config --global user.email "your_github_email"
+git config --global user.name "dbanerjee1410"
+git config --global user.email "debanjanbanerjee1985@gmail.com"
 git config -l
 
 git clone https://github.com/dbanerjee1410/stocker.git
@@ -69,7 +60,18 @@ git clone https://github.com/dbanerjee1410/stocker.git
 #passString = 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
 
 git config --global credential.helper cache
+cd stocker
 git pull -v
+
+#pip3 installs
+
+apt install python3-pip
+
+pip3 install pyotp
+pip3 install kiteconnect
+pip3 install selenium
+
+
 
 
 
