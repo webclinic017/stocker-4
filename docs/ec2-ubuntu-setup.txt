@@ -72,6 +72,14 @@ pip3 install kiteconnect
 pip3 install selenium
 
 
+# crontab
+#to enter get out of root user command exit
+
+crontab -e
+
+
+
+
 
 
 

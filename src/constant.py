@@ -24,6 +24,14 @@ class Constant:
     HOLIDAY_DIR = '/home/ubuntu/stocker/config/holidays.json'
     CHROME_DRIVER_LOCATION = '/usr/bin/chromedriver'
 
+    # This section is for windows, will be commented in GITHUB , but later on this file will be added in gitignore
+    #DEPLOY_DIR = 'D:\Projects\stocker\data'
+    #LOGFILE_DIR = 'D:\Projects\stocker\logs'
+    #HOLIDAY_DIR = 'D:\Projects\stocker\config\holidays.json'
+    #CHROME_DRIVER_LOCATION = 'D:\Software\chromedriver'
+
+
+
     # Zerodha Details
     API_KEY = 'yxrwphfcjpwe3104'
     API_SECRET = 'yi3xwwa6xbs36uz6i5o4h4cim2r5ab2e'
