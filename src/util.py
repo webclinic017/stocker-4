@@ -34,6 +34,21 @@ def get_monthly_expiry_day_date(datetime_obj=None):
         datetime_expiry_day = datetime_expiry_day - timedelta(days=1)
 
     datetime_expiry_day = get_time_of_day(0, 0, 0, datetime_expiry_day)
+
+    if datetime_expiry_day < get_time_of_day(0, 0, 0, datetime.now()):
+        datetime_obj = datetime.now() + timedelta(days=10)
+        year = datetime_obj.year
+        month = datetime_obj.month
+    # 2nd entry is the last day of the month
+        last_day = calendar.monthrange(year, month)[1]
+        datetime_expiry_day = datetime(year, month, last_day)
+        while calendar.day_name[datetime_expiry_day.weekday()] != 'Thursday':
+            datetime_expiry_day = datetime_expiry_day - timedelta(days=1)
+        while is_holiday(datetime_expiry_day):
+            datetime_expiry_day = datetime_expiry_day - timedelta(days=1)
+
+        datetime_expiry_day = get_time_of_day(0, 0, 0, datetime_expiry_day)
+
     return datetime_expiry_day
 
 

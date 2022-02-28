@@ -12,6 +12,7 @@ def initialize_log(file_name):
     Args:
         file_name (str): Absolute Path of the Logfile
     """
+
     logger = logging.getLogger()
     logger = logging.getLogger()
     handler = TimedRotatingFileHandler(
@@ -42,7 +43,7 @@ if not os.path.exists(Constant.LOGFILE_DIR):
           " does not exist. Exiting the app.")
     sys.exit(1)
 
-initialize_log(Constant.LOGFILE_DIR + "/startup.log")
+initialize_log(Constant.LOGFILE_DIR + "\startup.log")
 
 kite = login()
 

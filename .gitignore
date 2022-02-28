@@ -133,4 +133,5 @@ dmypy.json
 *.log
 data/*
 !data/.gitkeep
+#!logs/*
 #src/constant.py
