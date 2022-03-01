@@ -326,7 +326,7 @@ def get_market_end_time(date_time_obj=None):
 def get_json_from_log(filename):
     i = 1
     result = {}
-    with open('D:\Projects\stocker\logs\startup.log') as f:
+    with open(filename) as f:
         lines = f.readlines()
         for line in lines:
             r = line.split('||')
