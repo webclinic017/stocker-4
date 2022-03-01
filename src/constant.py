@@ -17,16 +17,16 @@ class Constant:
     """
 
     # Directories - This needs to be changed when deployed in AWS
-    #DEPLOY_DIR = '/home/ubuntu/stocker/data'
-    #LOGFILE_DIR = '/home/ubuntu/stocker/logs'
-    #HOLIDAY_DIR = '/home/ubuntu/stocker/config/holidays.json'
-    #CHROME_DRIVER_LOCATION = '/usr/bin/chromedriver'
+    DEPLOY_DIR = '/home/ubuntu/stocker/data'
+    LOGFILE_DIR = '/home/ubuntu/stocker/logs'
+    HOLIDAY_DIR = '/home/ubuntu/stocker/config/holidays.json'
+    CHROME_DRIVER_LOCATION = '/usr/bin/chromedriver'
 
     # This section is for windows, will be commented in GITHUB , but later on this file will be added in gitignore
-    DEPLOY_DIR = 'D:\Projects\stocker\data'
-    LOGFILE_DIR = 'D:\Projects\stocker\logs'
-    HOLIDAY_DIR = 'D:\Projects\stocker\config\holidays.json'
-    CHROME_DRIVER_LOCATION = 'D:\Software\chromedriver\chromedriver.exe'
+    #DEPLOY_DIR = 'D:\Projects\stocker\data'
+    #LOGFILE_DIR = 'D:\Projects\stocker\logs'
+    #HOLIDAY_DIR = 'D:\Projects\stocker\config\holidays.json'
+    #CHROME_DRIVER_LOCATION = 'D:\Software\chromedriver\chromedriver.exe'
 
     # Zerodha Details
     API_KEY = 'yxrwphfcjpwe3104'
