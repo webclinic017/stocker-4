@@ -17,9 +17,9 @@ def initialize_log(file_name):
     logger = logging.getLogger()
     handler = TimedRotatingFileHandler(
         file_name, when='midnight', backupCount=5)
-    formatter = logging.Formatter("%(asctime)s - [%(levelname)s] - "
-                                  "[%(filename)s)] - [%(funcName)s] "
-                                  "- [%(lineno)d] - %(message)s")
+    formatter = logging.Formatter("%(asctime)s||%(levelname)s||"
+                                  "%(filename)s||%(funcName)s"
+                                  "||%(lineno)d||%(message)s")
     handler.setFormatter(formatter)
     handler.setLevel(logging.INFO)
     logger.addHandler(handler)

@@ -38,3 +38,7 @@ class Constant:
     # Telegram
     TBOT_TOKEN = '5067002151:AAHpDvWf3LF6k-7egQJFHw3rjQe0fCJ43H0'
     TBOT_ID = '991843310'
+
+    # db Details
+
+    MASTER_KEY = 'BTrsTLzQkUEs0KRsybNr'

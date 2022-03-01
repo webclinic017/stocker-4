@@ -7,6 +7,9 @@ import time
 import urllib.request
 from datetime import datetime, timedelta, date
 
+import pymongo
+from pymongo import MongoClient
+
 from constant import Constant
 
 DATE_FORMAT = "%Y%m%d"
@@ -318,3 +321,26 @@ def get_market_end_time(date_time_obj=None):
         TYPE: Description
     """
     return get_time_of_day(15, 30, 0, date_time_obj)
+
+
+def get_json_from_log(filename):
+    i = 1
+    result = {}
+    with open('D:\Projects\stocker\logs\startup.log') as f:
+        lines = f.readlines()
+        for line in lines:
+            r = line.split('||')
+
+            result[str(i)] = {'timestamp': r[0], 'level': r[1], 'filename': r[2],
+                              'funcName': r[3], 'lineno': r[4], 'message': r[5]}
+
+            i += 1
+    return result
+
+
+def insert_log_to_mango(jsonfile):
+    client = pymongo.MongoClient(
+        "mongodb+srv://stocker:QB9Rhonf2NNdu8af@stocker.70kix.mongodb.net/STOCKERAPP?retryWrites=true&w=majority")
+    db = client["StokerLogFiles"]
+    collection = db["StockerLogColl"]
+    collection.insert_one(jsonfile)
