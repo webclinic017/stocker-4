@@ -43,7 +43,7 @@ if not os.path.exists(Constant.LOGFILE_DIR):
           " does not exist. Exiting the app.")
     sys.exit(1)
 
-initialize_log(Constant.LOGFILE_DIR + "\startup.log")
+initialize_log(Constant.LOGFILE_DIR + "/startup.log")
 
 kite = login()
 
